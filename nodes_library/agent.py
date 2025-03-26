@@ -3,17 +3,6 @@ from griptape.drivers.prompt.openai import OpenAiChatPromptDriver
 from griptape.structures import Agent
 from griptape.utils import Stream
 
-from griptape_nodes.exe_types.core_types import Parameter, ParameterMode, ParameterUIOptions
-from griptape_nodes.exe_types.node_types import ControlNode
-from griptape_nodes.retained_mode.griptape_nodes import GriptapeNodes
-from griptape_nodes_library.utils.env_utils import getenv
-from griptape_nodes_library.utils.error_utils import try_throw_error
-
-DEFAULT_MODEL = "gpt-4o"
-API_KEY_ENV_VAR = "OPENAI_API_KEY"
-SERVICE = "OpenAI"
-
-
 class gnRunAgent(ControlNode):
     def __init__(self, **kwargs) -> None:
         super().__init__(**kwargs)
