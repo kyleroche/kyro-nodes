@@ -14,18 +14,20 @@
     },
     "categories": [
         {
-            "id": "ControlNodes",
-            "color": "border-red-500",
-            "title": "Control",
-            "description": "Example nodes of Control Type",
-            "icon": "UserCircle"
+            "ControlNodes": {
+                "color": "border-red-500",
+                "title": "ControlNodes",
+                "description": "Example nodes of Control Type",
+                "icon": "Scale"
+            }
         },
         {
-            "id": "DataNodes",
-            "color": "border-blue-500",
-            "title": "Data",
-            "description": "Example nodes of Data Type",
-            "icon": "UserCircle"
+            "DataNodes": {
+                "color": "border-purple-500",
+                "title": "DataNodes",
+                "description": "Example nodes of Data Type",
+                "icon": "Truck"
+            }
         }
     ],
     "nodes": [

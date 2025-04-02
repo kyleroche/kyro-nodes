@@ -1,11 +1,10 @@
 from griptape_nodes.exe_types.node_types import DataNode
 from griptape_nodes.exe_types.core_types import Parameter
 
+
 class ExampleDataNode(DataNode):
     def __init__(self, **kwargs) -> None:
         super().__init__(**kwargs)
-
-        self.config = GriptapeNodes.ConfigManager()
 
         self.category = "Agent"
         self.description = "Create an agent and run it."

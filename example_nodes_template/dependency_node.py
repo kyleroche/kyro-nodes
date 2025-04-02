@@ -1,5 +1,6 @@
 from griptape_nodes.exe_types.node_types import ControlNode
 from griptape_nodes.exe_types.core_types import Parameter
+from griptape_nodes.retained_mode.griptape_nodes import GriptapeNodes
 
 class ExampleDependencyNode(ControlNode):
     def __init__(self, **kwargs) -> None:
@@ -7,8 +8,8 @@ class ExampleDependencyNode(ControlNode):
 
         self.config = GriptapeNodes.ConfigManager()
 
-        self.category = "Example"
-        self.description = "A created Example Agent"
+        self.category = "ControlNodes"
+        self.description = "An example node with dependencies"
         self.add_parameter(
             Parameter(
                 name="Parameter1",
