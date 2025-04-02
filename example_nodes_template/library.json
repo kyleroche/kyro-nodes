@@ -33,7 +33,7 @@
     "nodes": [
         {
             "class_name": "ExampleControlNode",
-            "file_path": "example_nodes_template/control_node.py",
+            "file_path": "control_node.py",
             "metadata": {
                 "category": "ControlNodes",
                 "description": "Example Griptape Node that helps control the flow.",
@@ -42,7 +42,7 @@
         },
         {
             "class_name": "ExampleDependencyNode",
-            "file_path": "example_nodes_template/dependency_node.py",
+            "file_path": "dependency_node.py",
             "metadata": {
                 "category": "ControlNodes",
                 "description": "Example Griptape Node that displays how to account for dependencies.",
@@ -51,7 +51,7 @@
         },
         {
             "class_name": "ExampleDataNode",
-            "file_path": "example_nodes_template/data_node.py",
+            "file_path": "data_node.py",
             "metadata": {
                 "category": "DataNodes",
                 "description": "Example Griptape Node that solely displays data types.",

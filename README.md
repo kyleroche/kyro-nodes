@@ -275,3 +275,25 @@ In order to add a node to a library, you must configure your JSON file. This wil
     ]
 }
 ```
+
+## Add your library to your installed Engine! 
+
+If you haven't already installed your Griptape Nodes engine, follow the installation steps [HERE](https://github.com/griptape-ai/griptape-nodes)
+
+1. Navigate to your griptape-nodes repository. 
+```
+vim ~/.config/griptape_nodes/griptape_nodes_config.json
+```
+2. Add the absolute path to your `library.json` to the file:
+```
+"app_events": {
+    "on_app_initialization_complete": {
+      "libraries_to_register": [
+        "nodes/griptape_nodes_library.json",
+        "<your-absolute-path>"
+      ],
+      "scripts_to_register": []
+    }
+  }
+```
+3. Relaunch the engine! 
