@@ -1,0 +1,62 @@
+{
+    "name": "Example Library",
+    "library_schema_version": "0.1.0",
+    "metadata": {
+        "author": "<Your-Name>",
+        "description": "<Your-Description>",
+        "library_version": "0.1.0",
+        "engine_version": "0.1.0",
+        "tags": [
+            "Griptape",
+            "AI",
+            "Examples"
+        ]
+    },
+    "categories": [
+        {
+            "ControlNodes": {
+                "color": "border-red-500",
+                "title": "ControlNodes",
+                "description": "Example nodes of Control Type",
+                "icon": "Scale"
+            }
+        },
+        {
+            "DataNodes": {
+                "color": "border-purple-500",
+                "title": "DataNodes",
+                "description": "Example nodes of Data Type",
+                "icon": "Truck"
+            }
+        }
+    ],
+    "nodes": [
+        {
+            "class_name": "ExampleControlNode",
+            "file_path": "control_node.py",
+            "metadata": {
+                "category": "ControlNodes",
+                "description": "Example Griptape Node that helps control the flow.",
+                "display_name": "Example Control Node"
+            }
+        },
+        {
+            "class_name": "ExampleDependencyNode",
+            "file_path": "dependency_node.py",
+            "metadata": {
+                "category": "ControlNodes",
+                "description": "Example Griptape Node that displays how to account for dependencies.",
+                "display_name": "Example Dependency Node"
+            }
+        },
+        {
+            "class_name": "ExampleDataNode",
+            "file_path": "data_node.py",
+            "metadata": {
+                "category": "DataNodes",
+                "description": "Example Griptape Node that solely displays data types.",
+                "display_name": "Example Data Node"
+            }
+        }
+    ]
+}
