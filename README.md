@@ -5,6 +5,24 @@ This is a guide to write your own nodes and node library, in order to use in our
 
 # Library Contributing Guide
 
+## Use this Template
+Create your own repository using this GitHub Template. Use the Template button in the top right. 
+
+Once you've created your own repository from this template, you need to pull it down to your local machine, or the machine where you are running your Griptape Nodes Engine. 
+
+> **Hint**: It's recommended to clone this repository into your Griptape Nodes workspace directory. You can find your workspace directory by running:
+> ```bash
+> gtn config | grep workspace_directory
+> ```
+> Here's a quick way to navigate to your workspace directory:
+> ```bash
+> cd $(gtn config | grep workspace_directory | cut -d'"' -f4)
+> ```
+> Finally, clone the repository:
+> ```bash
+> git clone https://github.com/{{ .RepoName }}.git
+> ```
+
 ## Rename Directory
 
 To create your node library and make it importable by other users, please follow the steps below.
