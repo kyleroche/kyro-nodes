@@ -71,19 +71,23 @@ Parameters have many fields that can be configured for their desired behavior.
 Only a couple of the fields are mandatory. The rest are optional.
 
 ### Parameter Fields 
-1. name: `str` 
-2. tooltip: `str | list[dict]`,
-3. type: `str` *OPTIONAL*
+1. name: `str` The name of the parameter. Must be unique to the node.
+2. tooltip: `str | list[dict]` The description that will appear upon hovering the mouse.
+3. type: `str` *OPTIONAL* The type of the value in the parameter. If not defined, it will be whatever the python type is.
 4. input_types: `list[str]` *OPTIONAL* The allowed list of types that can be connected as an INPUT to your parameter.
 5. output_type: `str` *OPTIONAL* The type that the OUTPUT of your parameter will be.
 6. default_value: Any *OPTIONAL* A default value for your parameter if it isn't set
-7. tooltip_as_input: `str | list[dict]` *OPTIONAL* 
-8. tooltip_as_property: `str | list[dict]` *OPTIONAL*
-9. tooltip_as_output: `str | list[dict]` *OPTIONAL*
-10. allowed_modes: `set[ParameterMode]` *OPTIONAL*
-11. ui_options: `ParameterUIOptions`  *OPTIONAL*
-12. converters: `list[Callable[[Any], Any]]` *OPTIONAL*
-13. validators: `list[Callable[[Parameter, Any], None]]` *OPTIONAL*
+7. tooltip_as_input: `str | list[dict]` *OPTIONAL* Tooltip on the input port
+8. tooltip_as_property: `str | list[dict]` *OPTIONAL* Tooltip on the property displapy
+9. tooltip_as_output: `str | list[dict]` *OPTIONAL* Tooltip on the output port
+10. allowed_modes: `set[ParameterMode]` 
+    *OPTIONAL* The allowed modes. 
+    `ParameterMode.INPUT`: Accepts inputs 
+    `ParameterMode.OUTPUT`: Sends output
+    `ParameterMode.PROPERTY`: Can be set on the node itself. 
+11. ui_options: `ParameterUIOptions`  *OPTIONAL* Displayed 
+12. converters: `list[Callable[[Any], Any]]` *OPTIONAL* Modifies the parameter value after being set if needed.
+13. validators: `list[Callable[[Parameter, Any], None]]` *OPTIONAL* Validates that the value on the parameter is correct.
 
 ## Define Node Method
 
