@@ -3,8 +3,6 @@
 Hi! Welcome to Griptape Nodes. 
 This is a guide to write your own nodes and node library, in order to use in our [Griptape Nodes](https://www.griptapenodes.com/) platform. 
 
-# Library Contributing Guide
-
 ## Use this Template
 Create your own repository using this GitHub Template. Use the Template button in the top right. 
 
