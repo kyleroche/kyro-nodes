@@ -6,7 +6,7 @@ class ExampleDataNode(DataNode):
     def __init__(self, **kwargs) -> None:
         super().__init__(**kwargs)
 
-        self.category = "ControlNodes"
+        self.category = "DataNodes"
         self.description = "An example node with dependencies"
         self.add_parameter(
             Parameter(
