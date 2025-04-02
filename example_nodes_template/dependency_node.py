@@ -1,6 +1,5 @@
 from griptape_nodes.exe_types.node_types import ControlNode
-from griptape_nodes.exe_types.core_types import Parameter
-from griptape_nodes.retained_mode.griptape_nodes import GriptapeNodes
+from griptape_nodes.exe_types.core_types import Parameter, ParameterMode
 
 class ExampleDependencyNode(ControlNode):
     def __init__(self, **kwargs) -> None:
@@ -10,20 +9,27 @@ class ExampleDependencyNode(ControlNode):
         self.description = "An example node with dependencies"
         self.add_parameter(
             Parameter(
-                name="Parameter1",
+                name="input",
                 input_types=["str","int"],
+                type="str",
                 default_value = 50,
                 tooltip="The parameter to take strings and ints",
+                allowed_modes=[ParameterMode.INPUT, ParameterMode.PROPERTY]
+            )
+        )
+        self.add_parameter(
+            Parameter(
+                name="output",
+                output_type="dict",
+                tooltip="The output parameter",
+                allowed_modes=[ParameterMode.OUTPUT]
             )
         )
 
-    # This method 
-    def validate_node(self) -> list[Exception] | None:
-        pass
 
     def process(self) -> None:
-        pass
-
-    # Overwrite
-    def allow_incoming_connection(self, source_node: Self, source_parameter: Parameter, target_parameter: Parameter) -> bool:
-        pass
+        # All of the current values of a parameter are stored on self.parameter_values
+        # All output values should be set in self.output_values
+        value = self.parameter_values["input"]
+        new_dict = {"Test_key":value}
+        self.parameter_output_values["input"] = new_dict
