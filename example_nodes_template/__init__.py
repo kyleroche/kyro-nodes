@@ -1,1 +1,1 @@
-"""Example Node"""
+"""Example Nodes in the Library"""
