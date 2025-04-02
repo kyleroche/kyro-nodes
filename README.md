@@ -1,7 +1,7 @@
 # Library Contributing Guide
 
 Hi! Welcome to Griptape Nodes. 
-This is a guide to write your own nodes and node library, in order to use in our (Griptape Nodes){griptapenodes.com} platform. 
+This is a guide to write your own nodes and node library, in order to use in our [Griptape Nodes](griptapenodes.com) platform. 
 
 # Library Contributing Guide
 
