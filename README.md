@@ -280,7 +280,8 @@ In order to add a node to a library, you must configure your JSON file. This wil
 
 If you haven't already installed your Griptape Nodes engine, follow the installation steps [HERE](https://github.com/griptape-ai/griptape-nodes)
 
-1. Open this file with a text editor.
+1. Start up the engine! 
+2. Navigate to settings
 ```
 ~/.config/griptape_nodes/griptape_nodes_config.json
 ```
