@@ -78,15 +78,16 @@ Nodes have additional methods that can provide functionality at or before runtim
 ### For other contributors 
 
 
-## Create your library as a JSON file 
+## Create your library as a JSON file. This will be copied and imported into the engine at runtime.
 
 ```
 {
-    "name": "Example Library",
+    # Information about your library
+    "name": "<Your-Library-Name>",
     "library_schema_version": "0.1.0",
     "metadata": {
         "author": "<Your-Name>",
-        "description": "Example node for Griptape Node",
+        "description": "<Your Description>",
         "library_version": "0.1.0",
         "engine_version": "0.1.0",
         "tags": [
@@ -94,23 +95,32 @@ Nodes have additional methods that can provide functionality at or before runtim
             "AI"
         ]
     },
+    # Categories define different sections that you can organize your node into. These are UI hints that group how your nodes will be displayed within your library.
     "categories": [
         {
-            "id": "Agent",
-            "color": "border-red-500",
-            "title": "Agent",
-            "description": "Nodes related to Agents.",
-            "icon": "UserCircle"
-        }
+            # The ID of your category
+            "Category1": {
+                # These are all UI hints for the Editor
+                "color": "border-red-500",
+                "title": "Category1",
+                "description": "<Your Description>",
+                "icon": "Scale"
+            }
+        },
     ],
+    # What nodes exist in this library?
     "nodes": [
-        {
-            "class_name": "gnRunAgent",
-            "file_path": "nodes_library/agent.py",
+        {   
+            # The name of the class you defined in your <your-node-name>.py
+            "class_name": "<YourNodeName>",
+            # The relative file path to your node.
+            "file_path": "<your-library-name>/<your-node-name>.py",
             "metadata": {
-                "category": "Agent",
-                "description": "Griptape Agent that can execute prompts and use tools",
-                "display_name": "Run Agent"
+                # What category should this node be displayed in?
+                "category": "Category1",
+                "description": "<Your Description>",
+                # The name you'd like displayed on Griptape Nodes.
+                "display_name": "<Your Node Name>"
             }
         }
     ]
