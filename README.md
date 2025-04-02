@@ -285,15 +285,22 @@ If you haven't already installed your Griptape Nodes engine, follow the installa
 vim ~/.config/griptape_nodes/griptape_nodes_config.json
 ```
 2. Add the absolute path to your `library.json` to the file:
+*Do not overwrite the nodes API key!*
 ```
+{
+  "nodes": {
+    "Griptape": {
+        "GT_CLOUD_API_KEY": "$GT_CLOUD_API_KEY"
+    }
+  },
 "app_events": {
     "on_app_initialization_complete": {
       "libraries_to_register": [
         "nodes/griptape_nodes_library.json",
         "<your-absolute-path>"
-      ],
-      "scripts_to_register": []
+      ]
     }
   }
+}
 ```
 3. Relaunch the engine! 
