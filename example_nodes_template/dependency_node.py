@@ -6,8 +6,6 @@ class ExampleDependencyNode(ControlNode):
     def __init__(self, **kwargs) -> None:
         super().__init__(**kwargs)
 
-        self.config = GriptapeNodes.ConfigManager()
-
         self.category = "ControlNodes"
         self.description = "An example node with dependencies"
         self.add_parameter(
@@ -19,8 +17,13 @@ class ExampleDependencyNode(ControlNode):
             )
         )
 
+    # This method 
     def validate_node(self) -> list[Exception] | None:
         pass
 
     def process(self) -> None:
+        pass
+
+    # Overwrite
+    def allow_incoming_connection(self, source_node: Self, source_parameter: Parameter, target_parameter: Parameter) -> bool:
         pass
