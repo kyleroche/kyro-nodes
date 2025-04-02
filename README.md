@@ -64,12 +64,28 @@ class <YourNodeName>(DataNode):
     pass
 ```
 
-## Initialize your Node and Define your Parameters
+## Initialize your Node and define your Parameters
 
 Parameters are fields on the node that can be connected to other nodes or set by the user. 
 Parameters have many fields that can be configured for their desired behavior. 
+Only a couple of the fields are mandatory. The rest are optional.
 
-## Define Node Methods
+### Parameter Fields 
+1. name: `str` 
+2. tooltip: `str | list[dict]`,
+3. type: `str` *OPTIONAL*
+4. input_types: `list[str]` *OPTIONAL* The allowed list of types that can be connected as an INPUT to your parameter.
+5. output_type: `str` *OPTIONAL* The type that the OUTPUT of your parameter will be.
+6. default_value: Any *OPTIONAL* A default value for your parameter if it isn't set
+7. tooltip_as_input: `str | list[dict]` *OPTIONAL* 
+8. tooltip_as_property: `str | list[dict]` *OPTIONAL*
+9. tooltip_as_output: `str | list[dict]` *OPTIONAL*
+10. allowed_modes: `set[ParameterMode]` *OPTIONAL*
+11. ui_options: `ParameterUIOptions`  *OPTIONAL*
+12. converters: `list[Callable[[Any], Any]]` *OPTIONAL*
+13. validators: `list[Callable[[Parameter, Any], None]]` *OPTIONAL*
+
+## Define Node Method
 
 Nodes have one absolute method that *absolutely* (haha) must be defined.
 This is the method that is called by the node at runtime when a node executes. 
@@ -78,9 +94,8 @@ It completes the function of your node, whether thats creating a string, generat
 def process(self) -> None:
     pass
 ```
-
-Nodes have additional methods that can provide functionality at or before runtime (and you can define as many helper functions as you'd like.)
 ### Additional Optional Methods
+Nodes have additional methods that can provide functionality at or before runtime (and you can define as many helper functions as you'd like.)
 1. Validate Node
 ``` 
 def validate_node(self) -> list[Exception] | None:
