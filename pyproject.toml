@@ -1,9 +1,9 @@
 [project]
-name = "example_nodes_template"
+name = "kyro-nodes-dev"
 version = "0.1.0"
-description = "Template for Users to create Custom Libraries and Nodes"
+description = "KYRO DEV NODES"
 authors = [
-    {name = "Your Name",email = "you@example.com"}
+    {name = "Your Name",email = "kyro@griptape.ai"}
 ]
 readme = "README.md"
 requires-python = ">=3.13"
