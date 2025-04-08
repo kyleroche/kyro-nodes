@@ -1,6 +1,8 @@
 from re import S
 from griptape_nodes.exe_types.node_types import DataNode
 from griptape_nodes.exe_types.core_types import Parameter, ParameterMode
+from griptape_nodes.traits.minmax import MinMax
+from griptape_nodes.traits.clamp import Clamp
 
 
 class Age(DataNode):
@@ -18,9 +20,11 @@ class Age(DataNode):
                 default_value= 30,
                 tooltip="What is your age",
                 allowed_modes={ParameterMode.PROPERTY, ParameterMode.OUTPUT},
-                # UI Options allow user to optionally set how they want their value to be displayed, based on the type. Here, I've set age to be displayed on the node as a slider. 
-                # There are many types of UI Options that you can choose from. 
-                ui_options={"slider":{"min_val":1,"max_val":90}}
+                # Traits are classes that you can assign to a parameter
+                # Clamp prevents the parameter values from being set outside of that range, and MinMax raises an error if that is attempted.
+                # You can create your own traits as long as they inherit Trait from griptape_nodes.exe_types.core_types 
+                traits={MinMax(min_val=1, max_val=98), Clamp(min_val=1, max_val=98)},
+                ui_options={"slider":{"min_val":1, "max_val":98}}
             )
         )
 

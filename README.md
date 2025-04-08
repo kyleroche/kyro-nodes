@@ -101,9 +101,10 @@ Only a couple of the fields are mandatory. The rest are optional.
     `ParameterMode.INPUT`: Accepts inputs 
     `ParameterMode.OUTPUT`: Sends output
     `ParameterMode.PROPERTY`: Can be set on the node itself. 
-11. ui_options: `ParameterUIOptions`  *OPTIONAL* Displayed 
-12. converters: `list[Callable[[Any], Any]]` *OPTIONAL* Modifies the parameter value after being set if needed.
-13. validators: `list[Callable[[Parameter, Any], None]]` *OPTIONAL* Validates that the value on the parameter is correct.
+11. ui_options: `dict`  *OPTIONAL* Informs the display of your node.
+12. traits: `set[type[Trait] | Trait]` *OPTIONAL* Reusable classes that define features on a parameter, including converters and UI options. They are inheritable!
+13. converters: `list[Callable[[Any], Any]]` *OPTIONAL* Modifies the parameter value after being set if needed.
+14. validators: `list[Callable[[Parameter, Any], None]]` *OPTIONAL* Validates that the value on the parameter is correct.
 
 ## Define Node Method
 
