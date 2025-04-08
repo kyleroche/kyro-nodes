@@ -3,8 +3,9 @@ from griptape_nodes.exe_types.core_types import Parameter, ParameterMode
 import openai
 from griptape.structures import Agent
 from griptape.utils import Stream
+from griptape.events import TextChunkEvent
 
-class ExampleDependencyNode(ControlNode):
+class OpenAIChat(ControlNode):
     def __init__(self, **kwargs) -> None:
         super().__init__(**kwargs)
 
@@ -17,7 +18,8 @@ class ExampleDependencyNode(ControlNode):
                 type="str",
                 default_value = "Hey! What's up?",
                 tooltip="The prompt to call an agent",
-                allowed_modes=[ParameterMode.INPUT, ParameterMode.PROPERTY]
+                allowed_modes=[ParameterMode.INPUT, ParameterMode.PROPERTY],
+                ui_options={"multiline":True}
             )
         )
         self.add_parameter(
@@ -25,7 +27,8 @@ class ExampleDependencyNode(ControlNode):
                 name="output",
                 output_type="str",
                 tooltip="The output from the agent",
-                allowed_modes=[ParameterMode.OUTPUT]
+                allowed_modes=[ParameterMode.OUTPUT],
+                ui_options={"multiline":True,"placeholder_text":"The agent response"}
             )
         )
 
@@ -52,12 +55,11 @@ class ExampleDependencyNode(ControlNode):
         # All of the current values of a parameter are stored on self.parameter_values
         prompt = self.parameter_values["prompt"]
         # Use a griptape agent to run the structure! 
-        agent = Agent()
+        agent = Agent(stream=True)
         full_output = ""
         # Running with the Stream Util allows you to stream your responses to the node!
-        for artifact in Stream(agent).run(prompt):
+        for artifact in Stream(agent, event_types=[TextChunkEvent]).run(prompt):
             full_output += artifact.value
-            # All output values should be set in self.parameter_output_values
-            self.parameter_output_values["output"] = full_output
+        self.parameter_output_values["output"] = full_output
        
         

@@ -312,3 +312,7 @@ After you've completed those and you have your engine up and running:
 ![See Libraries](./images/see_libraries.png)
 8. Your newly registered library should appear! Drag and drop nodes to use them!
 ![Library Display](./images/final_image.png)
+
+
+### Here is an example flow that you could make with the provided nodes:
+![Example Flow](./images/example_flow.png)
