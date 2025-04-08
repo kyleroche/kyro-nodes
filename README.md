@@ -1,9 +1,25 @@
-# Library Contributing Guide
+# Griptape Nodes: Node Library Template
 
 Hi! Welcome to Griptape Nodes. 
 This is a guide to write your own nodes and node library, in order to use in our [Griptape Nodes](https://www.griptapenodes.com/) platform. 
 
-# Library Contributing Guide
+## Use this Template
+Create your own repository using this GitHub Template. Use the Template button in the top right. 
+
+Once you've created your own repository from this template, you need to pull it down to your local machine, or the machine where you are running your Griptape Nodes Engine. 
+
+> **Hint**: It's recommended to clone this repository into your Griptape Nodes workspace directory. You can find your workspace directory by running:
+> ```bash
+> gtn config | grep workspace_directory
+> ```
+> Here's a quick way to navigate to your workspace directory:
+> ```bash
+> cd $(gtn config | grep workspace_directory | cut -d'"' -f4)
+> ```
+> Finally, clone the repository:
+> ```bash
+> git clone https://github.com/{{ .RepoName }}.git
+> ```
 
 ## Rename Directory
 
@@ -85,9 +101,10 @@ Only a couple of the fields are mandatory. The rest are optional.
     `ParameterMode.INPUT`: Accepts inputs 
     `ParameterMode.OUTPUT`: Sends output
     `ParameterMode.PROPERTY`: Can be set on the node itself. 
-11. ui_options: `ParameterUIOptions`  *OPTIONAL* Displayed 
-12. converters: `list[Callable[[Any], Any]]` *OPTIONAL* Modifies the parameter value after being set if needed.
-13. validators: `list[Callable[[Parameter, Any], None]]` *OPTIONAL* Validates that the value on the parameter is correct.
+11. ui_options: `dict`  *OPTIONAL* Informs the display of your node.
+12. traits: `set[type[Trait] | Trait]` *OPTIONAL* Reusable classes that define features on a parameter, including converters and UI options. They are inheritable!
+13. converters: `list[Callable[[Any], Any]]` *OPTIONAL* Modifies the parameter value after being set if needed.
+14. validators: `list[Callable[[Parameter, Any], None]]` *OPTIONAL* Validates that the value on the parameter is correct.
 
 ## Define Node Method
 
@@ -296,3 +313,7 @@ After you've completed those and you have your engine up and running:
 ![See Libraries](./images/see_libraries.png)
 8. Your newly registered library should appear! Drag and drop nodes to use them!
 ![Library Display](./images/final_image.png)
+
+
+### Here is an example flow that you could make with the provided nodes:
+![Example Flow](./images/example_flow.png)
