@@ -10,12 +10,6 @@ class CreateIntroduction(ControlNode):
 
         self.category = "ControlNodes"
         self.description = "Create an introduction."
-
-        # Converters should take one positional argument of any type, and can return anything!
-        def capitalize_name(value:str) -> str:
-            if not value:
-                return value
-            return value[0].upper() + value[1:]
             
         self.add_parameter(
             Parameter(

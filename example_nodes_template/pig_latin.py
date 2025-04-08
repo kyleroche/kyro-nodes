@@ -30,7 +30,7 @@ class ConvertToPigLatin(ControlNode):
                 type="str",
                 tooltip="The last name of the user",
                 # Specifying allowed_modes determines how the parameter can be used. Can it receive inputs, send outputs, or be modified in the node?
-                allowed_modes=[ParameterMode.OUTPUT],
+                allowed_modes={ParameterMode.OUTPUT},
                 ui_options={"placeholder_text":"Input text here", "multiline":True}
             )
         )

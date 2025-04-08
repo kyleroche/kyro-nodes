@@ -21,7 +21,7 @@ class CreateName(DataNode):
                 name="first name",
                 input_types=["str"],
                 type="str",
-                allowed_modes=[ParameterMode.INPUT, ParameterMode.PROPERTY],
+                allowed_modes={ParameterMode.INPUT, ParameterMode.PROPERTY},
                 output_type="str",
                 default_value = "Jane",
                 tooltip="The first name of the user",
@@ -37,7 +37,7 @@ class CreateName(DataNode):
                 type="str",
                 default_value="Smith",
                 tooltip="The last name of the user",
-                allowed_modes=[ParameterMode.INPUT, ParameterMode.PROPERTY],
+                allowed_modes={ParameterMode.INPUT, ParameterMode.PROPERTY},
                 converters=[capitalize_name]
             )
         )
@@ -46,7 +46,7 @@ class CreateName(DataNode):
                 name="full name",
                 output_type="str",
                 tooltip="The full name of the user",
-                allowed_modes=[ParameterMode.OUTPUT]
+                allowed_modes={ParameterMode.OUTPUT}
             )
         )
 

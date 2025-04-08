@@ -18,7 +18,7 @@ class OpenAIChat(ControlNode):
                 type="str",
                 default_value = "Hey! What's up?",
                 tooltip="The prompt to call an agent",
-                allowed_modes=[ParameterMode.INPUT, ParameterMode.PROPERTY],
+                allowed_modes={ParameterMode.INPUT, ParameterMode.PROPERTY},
                 ui_options={"multiline":True}
             )
         )
@@ -27,7 +27,7 @@ class OpenAIChat(ControlNode):
                 name="output",
                 output_type="str",
                 tooltip="The output from the agent",
-                allowed_modes=[ParameterMode.OUTPUT],
+                allowed_modes={ParameterMode.OUTPUT},
                 ui_options={"multiline":True,"placeholder_text":"The agent response"}
             )
         )
